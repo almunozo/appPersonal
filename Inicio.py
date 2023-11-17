@@ -8,7 +8,6 @@ st.set_page_config(
     page_icon="🎮",
 )
 
-
 def get_character_info(personaje):
     """
     Retorna la información de un juego ingresado por el usuario.
@@ -20,8 +19,8 @@ def get_character_info(personaje):
     -str: Información del juego.
     -imagen: Imagen de la portada del juego.
     """
-    
-    url = f"https://gateway.marvel.com:443/v1/public/characters?name={personaje}&limit=5&apikey=44e41c4cde4c827c390345b6cb8e48b8"
+
+    url = f"https://gateway.marvel.com:443/v1/public/characters?name={personaje}&limit=5&ts=1&apikey=44e41c4cde4c827c390345b6cb8e48b8&hash=dcd02b998bac5817c79bf187e2d62626"
 
     response = requests.get(url)
 
@@ -32,7 +31,7 @@ def get_character_info(personaje):
     name = character["name"]
     description = character["description"]
     image_path = character["thumbnail"]["path"]
-    image_url=image_path+".jgp"
+    image_url=image_path+".jpg"
     
     # Devuelve los datos del juego
     return name, description,image_url
