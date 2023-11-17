@@ -3,7 +3,9 @@ import numpy as np
 from PIL import Image
 import pandas as pd
 import requests
-import matplotlib.pyplot as plt                      
+import matplotlib.pyplot as plt      
+
+print("Matplotlib version:", plt.__version__)
 
 def consultaApi(country_name):
     url = f'https://restcountries.com/v3.1/translation/{country_name}'
